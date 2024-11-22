@@ -53,9 +53,9 @@ routerd tx staking create-validator \
   --commission-max-rate 0.20 \
   --commission-max-change-rate 0.05 \
   --min-self-delegation 1 \
-  --from wallet \
-  --gas "200000" \
-  --fees 5000route \
+  --from "wallet" \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
@@ -68,19 +68,19 @@ routerd tx staking edit-validator \
   --website "YOUR_WEBSITE_URL" \
   --chain-id router_9600-1 \
   --commission-rate 0.05 \
-  --from wallet \
-  --gas "200000" \
-  --fees 5000route \
+  --from "wallet" \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Unjail a Validator
 ```bash
 routerd tx slashing unjail \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
@@ -109,10 +109,10 @@ routerd q staking validator $(routerd keys show wallet --bech val -a)
 ### Withdraw All Rewards from Validators
 ```bash
 routerd tx distribution withdraw-all-rewards \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
@@ -120,60 +120,60 @@ routerd tx distribution withdraw-all-rewards \
 ```bash
 routerd tx distribution withdraw-rewards $(routerd keys show wallet --bech val -a) \
   --commission \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Delegate Tokens to Yourself
 ```bash
 routerd tx staking delegate $(routerd keys show wallet --bech val -a) 1000000000000000000route \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Delegate Tokens to Another Validator
 ```bash
 routerd tx staking delegate <TO_VALOPER_ADDRESS> 1000000000000000000route \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Redelegate Tokens to Another Validator
 ```bash
 routerd tx staking redelegate $(routerd keys show wallet --bech val -a) <TO_VALOPER_ADDRESS> 1000000000000000000route \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Unbond Tokens from Your Validator
 ```bash
 routerd tx staking unbond $(routerd keys show wallet --bech val -a) 1000000000000000000route \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Send Tokens to Another Wallet
 ```bash
 routerd tx bank send wallet <TO_WALLET_ADDRESS> 1000000000000000000route \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
@@ -192,40 +192,40 @@ routerd query gov proposal 1
 ### Vote 'Yes' on a Proposal
 ```bash
 routerd tx gov vote 1 yes \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Vote 'No' on a Proposal
 ```bash
 routerd tx gov vote 1 no \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Vote 'Abstain' on a Proposal
 ```bash
 routerd tx gov vote 1 abstain \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
 ### Vote 'NoWithVeto' on a Proposal
 ```bash
 routerd tx gov vote 1 NoWithVeto \
-  --from wallet \
+  --from "wallet" \
   --chain-id router_9600-1 \
-  --gas "200000" \
-  --fees 5000route \
+  --gas "300000" \
+  --gas-prices "7.0route" \
   -y
 ```
 
